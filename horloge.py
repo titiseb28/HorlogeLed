@@ -10,20 +10,15 @@ from luma.led_matrix.device import max7219
 from luma.core import legacy
 from luma.core.legacy.font import proportional, CP437_FONT, TINY_FONT, SINCLAIR_FONT, LCD_FONT
 
-#recup variable ex heure << simple.py "$(date +'%H:%M')" >>
-
-#for arg in sys.argv: 
- #  print arg
-
 serial = spi(port=0, device=0, gpio=noop())
 device = max7219(serial, cascaded=4, block_orientation=-90)
-#print("Created device")
+
 
 
 
 i = 0
-ii = 0
-while i < 30:
+
+while i < 10:
 	print i
 
         #ont recup la temperature de la salle a manger
@@ -49,11 +44,7 @@ while i < 30:
 
         seconde = time.strftime("%S")
         #print seconde
-        #serial = spi(port=0, device=0, gpio=noop())
-        #device = max7219(serial, cascaded=4, block_orientation=-90)
-        #print("Created device")
-
-
+       
         with canvas(device) as draw:
                 legacy.text(draw, (0, 0), heure, fill="white", font=proportional(CP437_FONT))
 
