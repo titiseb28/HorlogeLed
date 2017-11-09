@@ -17,7 +17,7 @@ device = max7219(serial, cascaded=4, block_orientation=-90)
 
 
 i = 0
-
+ii =0
 while i < 10:
 	print i
 
@@ -42,39 +42,30 @@ while i < 10:
         heure = time.strftime("%H:%M")
         #print time.strftime("%H:%M")
 
-        seconde = time.strftime("%S")
+        #seconde = time.strftime("%S")
         #print seconde
        
-        with canvas(device) as draw:
-                legacy.text(draw, (0, 0), heure, fill="white", font=proportional(CP437_FONT))
+        while ii < 6: 
 
-        time.sleep(5)
+		if ii == 0:
+			message = heure		
+		if ii == 1:
+			message = date2
+		if ii == 3:
+			message = "salle"
+		if ii == 4: 
+			message = tempeS
+		if ii == 5:
+			message = "ext"
+		if ii == 6: 
+			message = ext
 
-        with canvas(device) as draw:
-                legacy.text(draw, (0, 0), date2, fill="white", font=proportional(CP437_FONT))
+		with canvas(device) as draw:
+                	legacy.text(draw, (0, 0), message, fill="white", font=proportional(CP437_FONT))
 
-        time.sleep(5)
+        	time.sleep(5)
+		ii=ii+1
 
-        with canvas(device) as draw:
-                legacy.text(draw, (0, 0), "Salle", fill="white", font=proportional(SINCLAIR_FONT))
-
-        time.sleep(5)
-
-
-        with canvas(device) as draw:
-                legacy.text(draw, (0, 0), tempeS, fill="white", font=proportional(CP437_FONT))
-
-        time.sleep(5)
-
-        with canvas(device) as draw:
-		legacy.text(draw, (5, 0), "EXT", fill="white", font=proportional(CP437_FONT))
-
-        time.sleep(5)
-
-        with canvas(device) as draw:
-                legacy.text(draw, (0, 0), ext, fill="white", font=proportional(CP437_FONT))
-
-        time.sleep(5)
 
         i = i+1
-
+	ii = 0
