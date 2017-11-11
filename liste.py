@@ -2,14 +2,14 @@
 
 FILE = 'liste.txt'
  
-with open(FILE, 'r') as f:
-    lines = [line.strip('\n') for line in f.readlines()]
+#creation de la liste
+liste = []
+for ligne in open(FILE):
+    liste.append(ligne.split('\t'))
  
-liste = [[line] for line in lines]
+print liste[1][2]
 
-for Mliste in liste:
-    print Mliste
+
 
 print len(liste)
-
-print liste[:]
+#print liste[:]
