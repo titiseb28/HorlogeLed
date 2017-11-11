@@ -1,0 +1,2 @@
+heure,sh,time.strftime("%H:%M")
+sallon,txt,sallon
