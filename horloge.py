@@ -45,7 +45,7 @@ while i < 10:
         #seconde = time.strftime("%S")
         #print seconde
        
-        while ii < 6: 
+        while ii < 7: 
 
 		if ii == 0:
 			message = heure		
