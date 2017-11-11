@@ -13,11 +13,18 @@ from luma.core.legacy.font import proportional, CP437_FONT, TINY_FONT, SINCLAIR_
 serial = spi(port=0, device=0, gpio=noop())
 device = max7219(serial, cascaded=4, block_orientation=-90)
 
-
+#metttre le fichier liste.txt en liste
+FILE = 'liste.txt'
+ 
+#creation de la liste
+liste = []
+for ligne in open(FILE):
+    liste.append(ligne.split('\t'))
 
 
 i = 0
 ii =0
+
 while i < 10:
 	print i
 
@@ -45,20 +52,46 @@ while i < 10:
         #seconde = time.strftime("%S")
         #print seconde
        
-        while ii < 7: 
+        #while ii < 7: 
 
-		if ii == 0:
-			message = heure		
-		if ii == 1:
-			message = date2
-		if ii == 3:
-			message = "salle"
-		if ii == 4: 
-			message = tempeS
-		if ii == 5:
-			message = "ext"
-		if ii == 6: 
-			message = ext
+	#	if ii == 0:
+	#		message = heure		
+	#	if ii == 1:
+	#		message = date2
+	#	if ii == 3:
+	#		message = "salle"
+	#	if ii == 4: 
+	#		message = tempeS
+	#	if ii == 5:
+	#		message = "ext"
+	#	if ii == 6: 
+	#		message = ext
+
+
+	for message in liste:
+		print ii
+		
+		type = liste[ii][1]
+
+		if type == "TXT":
+			print "TXT"
+			message = liste[ii][2]
+
+		if type == "URL":
+			print "URL"
+			URL = liste[ii][2]
+			f = urllib2.urlopen(URL)
+		        message = f.read()
+        		f.close()
+
+		if type == "SH":
+			print "SH"
+			sh = liste[ii][0]
+			print sh
+			if sh == "heure":
+				message = heure
+			if sh == "date":
+				message = date2
 
 		with canvas(device) as draw:
                 	legacy.text(draw, (0, 0), message, fill="white", font=proportional(CP437_FONT))
