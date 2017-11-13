@@ -1,3 +1,10 @@
 installation de  luma-led-matrix
 
 https://luma-led-matrix.readthedocs.io/en/latest/api-documentation.html
+
+
+instalation de lighttpd
+
+http://pazpop.fr/installer-un-serveur-web-leger-sur-son-raspberry-pi-lighttpd/
+
+changement du dosier root dans le rep du script www
