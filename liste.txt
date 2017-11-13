@@ -1,3 +1,6 @@
-heure	SH	time.strftime("%H:%M")
-temps	URL	http://192.168.0.40/core/api/jeeApi.php?apikey=W2DfaXK7G63ZrawBFTCODepuOpHlURbRi8Ob598abQZjQwD6&type=cmd&id=385
-salle	TXT	salle
+heure	SH	Heure
+date	SH	Date
+salle	TXT	Salle
+tempS	URL	http://192.168.0.40/core/api/jeeApi.php?apikey=W2DfaXK7G63ZrawBFTCODepuOpHlURbRi8Ob598abQZjQwD6&type=cmd&id=385
+ext	TXT	Ext
+TempE	URL	http://192.168.0.40/core/api/jeeApi.php?apikey=W2DfaXK7G63ZrawBFTCODepuOpHlURbRi8Ob598abQZjQwD6&type=cmd&id=8

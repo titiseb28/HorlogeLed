@@ -28,66 +28,30 @@ ii =0
 while i < 10:
 	print i
 
-        #ont recup la temperature de la salle a manger
-        f = urllib2.urlopen("http://192.168.0.40/core/api/jeeApi.php?apikey=W2DfaXK7G63ZrawBFTCODepuOpHlURbRi8Ob598abQZjQwD6&type=cmd&id=385")
-        tempeS = f.read()
-        f.close()
-        print tempeS
-
-
-         #ont recup la temperature de la salle a manger
-        f = urllib2.urlopen("http://192.168.0.40/core/api/jeeApi.php?apikey=W2DfaXK7G63ZrawBFTCODepuOpHlURbRi8Ob598abQZjQwD6&type=cmd&id=8")
-        ext = f.read()
-        f.close()
-        print ext
-
-
+        #ont recup la Date
         date = datetime.datetime.now()
         date2 = date.strftime('%d %m')
-        #print date2    
-
+        
+	#ont recup l'heure
         heure = time.strftime("%H:%M")
-        #print time.strftime("%H:%M")
+        
 
-        #seconde = time.strftime("%S")
-        #print seconde
-       
-        #while ii < 7: 
-
-	#	if ii == 0:
-	#		message = heure		
-	#	if ii == 1:
-	#		message = date2
-	#	if ii == 3:
-	#		message = "salle"
-	#	if ii == 4: 
-	#		message = tempeS
-	#	if ii == 5:
-	#		message = "ext"
-	#	if ii == 6: 
-	#		message = ext
-
-
-	for message in liste:
-		print ii
-		
+        for message in liste:
+				
 		type = liste[ii][1]
 
 		if type == "TXT":
-			print "TXT"
 			message = liste[ii][2]
 
 		if type == "URL":
-			print "URL"
 			URL = liste[ii][2]
 			f = urllib2.urlopen(URL)
 		        message = f.read()
         		f.close()
 
 		if type == "SH":
-			print "SH"
 			sh = liste[ii][0]
-			print sh
+			
 			if sh == "heure":
 				message = heure
 			if sh == "date":
