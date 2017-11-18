@@ -1,5 +1,5 @@
-heure	SH	Heure
-date	SH	Date
+heure	API	Heure
+date	API	Date
 salle	TXT	Salle
 tempS	URL	http://192.168.0.40/core/api/jeeApi.php?apikey=W2DfaXK7G63ZrawBFTCODepuOpHlURbRi8Ob598abQZjQwD6&type=cmd&id=385
 ext	TXT	Ext

@@ -41,16 +41,16 @@ while i < 10:
 		        message = f.read()
         		f.close()
 
-		if type == "SH":
-			sh = liste[ii][0]
+		if type == "API":
+			API = liste[ii][0]
 			
-			if sh == "heure":
+			if API == "heure":
 				#ont recup l'heure
 			        heure = time.strftime("%H:%M")
 				message = heure
 
-			if sh == "date":
-				 #ont recup la Date
+			if API == "date":
+				#ont recup la Date
 			        date = datetime.datetime.now()
         			date2 = date.strftime('%d %m')
 				message = date2
