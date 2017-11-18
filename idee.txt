@@ -1,0 +1,4 @@
+affichage de l'heure et date => ok
+affichage de message dommotique =>ok
+
+affiche nombre abonner facebook/twiter/instagrame .....
