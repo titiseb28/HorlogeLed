@@ -26,15 +26,7 @@ i = 0
 ii =0
 
 while i < 10:
-	print i
-
-        #ont recup la Date
-        date = datetime.datetime.now()
-        date2 = date.strftime('%d %m')
-        
-	#ont recup l'heure
-        heure = time.strftime("%H:%M")
-        
+	print i        
 
         for message in liste:
 				
@@ -53,8 +45,14 @@ while i < 10:
 			sh = liste[ii][0]
 			
 			if sh == "heure":
+				#ont recup l'heure
+			        heure = time.strftime("%H:%M")
 				message = heure
+
 			if sh == "date":
+				 #ont recup la Date
+			        date = datetime.datetime.now()
+        			date2 = date.strftime('%d %m')
 				message = date2
 
 		with canvas(device) as draw:
