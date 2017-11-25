@@ -8,3 +8,7 @@ instalation de lighttpd
 http://pazpop.fr/installer-un-serveur-web-leger-sur-son-raspberry-pi-lighttpd/
 
 changement du dosier root dans le rep du script www
+
+doc pir
+
+https://raspberry-pi.developpez.com/cours-tutoriels/capteur/mag-pi-utiliser-port-gpio/partie-1-detection-mouvement/
