@@ -42,10 +42,10 @@ try:
 			print("Motion detected! ")
 
 			while i < 3:
-				print i        
+				print i
 
-        			for message in liste:
-			
+        		for message in liste:
+
 					type = liste[ii][1]
 
 					if type == "TXT":
@@ -55,30 +55,29 @@ try:
 						URL = liste[ii][2]
 						f = urllib2.urlopen(URL)
 			  			message = f.read()
-        					f.close()
+        				f.close()
 
 					if type == "API":
 						API = liste[ii][0]
-			
+
 						if API == "heure":
 							#ont recup l'heure
-			  				heure = time.strftime("%H:%M")
+							heure = time.strftime("%H:%M")
 							message = heure
 
 						if API == "date":
 							#ont recup la Date
-	       						date = datetime.datetime.now()
-        						date2 = date.strftime('%d %m')
+	       					date = datetime.datetime.now()
+        					date2 = date.strftime('%d %m')
 							message = date2
 
 					with canvas(device) as draw:
-               					legacy.text(draw, (0, 0), message, fill="white", font=proportional(CP437_FONT))
+               			legacy.text(draw, (0, 0), message, fill="white", font=proportional(CP437_FONT))
 
-        			time.sleep(5)
+        		time.sleep(5)
 				ii=ii+1
-
     			i = i+1
-		ii = 0
+			ii = 0
 
 except KeyboardInterrupt:
     print(" Cleaning up the GPIO")
