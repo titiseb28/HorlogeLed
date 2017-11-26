@@ -41,10 +41,10 @@ try:
 		if GPIO.input(PIR):
 			print("Motion detected! ")
 
-			while i < 3:
+			while i <= 2:
 				print i
 
-        		for message in liste:
+	        		for message in liste:
 
 					type = liste[ii][1]
 
@@ -55,7 +55,7 @@ try:
 						URL = liste[ii][2]
 						f = urllib2.urlopen(URL)
 			  			message = f.read()
-        				f.close()
+        					f.close()
 
 					if type == "API":
 						API = liste[ii][0]
@@ -67,17 +67,22 @@ try:
 
 						if API == "date":
 							#ont recup la Date
-	       					date = datetime.datetime.now()
-        					date2 = date.strftime('%d %m')
+	       						date = datetime.datetime.now()
+        						date2 = date.strftime('%d %m')
 							message = date2
 
 					with canvas(device) as draw:
-               			legacy.text(draw, (0, 0), message, fill="white", font=proportional(CP437_FONT))
+               					legacy.text(draw, (0, 0), message, fill="white", font=proportional(CP437_FONT))
 
-        		time.sleep(5)
-				ii=ii+1
-    			i = i+1
-			ii = 0
+        				time.sleep(2)
+					ii=ii+1
+	    			ii = 0
+				i=i+1
+			if i >=2:
+				print ("i remis a 0")
+				i = 0
+				with canvas(device) as draw:
+	                                legacy.text(draw, (0, 0), "", fill="white", font=proportional(CP437_FONT))
 
 except KeyboardInterrupt:
     print(" Cleaning up the GPIO")
