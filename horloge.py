@@ -16,6 +16,9 @@ GPIO.setmode(GPIO. BCM)
 PIR=7
 GPIO.setup(PIR, GPIO.IN)
 
+#configuration
+NbBoucle = 2
+TempPause = 2
 
 #configuration matrix
 serial = spi(port=0, device=0, gpio=noop())
@@ -28,20 +31,30 @@ FILE = 'liste.txt'
 liste = []
 for ligne in open(FILE):
 	liste.append(ligne.split('\t'))
-
+#init boucle principal
 i=0
+
+#init ligne liste
 ii=0
 
 try:
-	print("PIR Module Test")
+	print("LANCEMENT PIR Module ")
+	with canvas(device) as draw:
+	    legacy.text(draw, (4, 0), "INIT", fill="white", font=proportional(CP437_FONT))
     	print(" (CTRL+C to exit)")
     	time.sleep(2)
     	print "Ready"
+	with canvas(device) as draw:
+	    legacy.text(draw, (8, 0), "OK", fill="white", font=proportional(CP437_FONT))
+	time.sleep(2)
+	with canvas(device) as draw:
+	    legacy.text(draw, (0, 0), "", fill="white", font=proportional(CP437_FONT))
+
 	while True:
 		if GPIO.input(PIR):
 			print("Motion detected! ")
 
-			while i <= 2:
+			while i < NbBoucle:
 				print i
 
 	        		for message in liste:
@@ -74,15 +87,15 @@ try:
 					with canvas(device) as draw:
                					legacy.text(draw, (0, 0), message, fill="white", font=proportional(CP437_FONT))
 
-        				time.sleep(2)
+        				time.sleep(TempPause)
 					ii=ii+1
 	    			ii = 0
 				i=i+1
-			if i >=2:
-				print ("i remis a 0")
+			if i >= NbBoucle:
+
 				i = 0
 				with canvas(device) as draw:
-	                                legacy.text(draw, (0, 0), "", fill="white", font=proportional(CP437_FONT))
+	                           legacy.text(draw, (0, 0), "", fill="white", font=proportional(CP437_FONT))
 
 except KeyboardInterrupt:
     print(" Cleaning up the GPIO")
