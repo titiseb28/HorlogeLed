@@ -4,6 +4,13 @@ h1{
 	text-align: center;
 }
 
+.test{
+		color: white;
+		background-color: black;
+		text-align: center;
+}
+
 p{
 	color: green;
+
 }
