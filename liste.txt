@@ -1,6 +1,6 @@
 heure	API	Heure
 date	API	Date
-salle	TXT	Salle
+salle	TXT	Salle a Manger
 tempS	URL	http://192.168.0.40/core/api/jeeApi.php?apikey=W2DfaXK7G63ZrawBFTCODepuOpHlURbRi8Ob598abQZjQwD6&type=cmd&id=385
-ext	TXT	Ext
+ext	TXT	Exterieur
 TempE	URL	http://192.168.0.40/core/api/jeeApi.php?apikey=W2DfaXK7G63ZrawBFTCODepuOpHlURbRi8Ob598abQZjQwD6&type=cmd&id=8

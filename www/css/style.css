@@ -10,7 +10,12 @@ h1{
 		text-align: center;
 }
 
-p{
+.paragraphe{
 	color: green;
 
+}
+
+.footer{
+	color: black;
+	text-align: right;
 }

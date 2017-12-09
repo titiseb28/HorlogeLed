@@ -22,7 +22,7 @@ TempPause = 2
 
 #configuration matrix
 serial = spi(port=0, device=0, gpio=noop())
-device = max7219(serial, cascaded=4, block_orientation=-90)
+device = max7219(serial, cascaded=8, block_orientation=-90)
 
 #metttre le fichier liste.txt en liste
 FILE = 'liste.txt'
@@ -81,7 +81,7 @@ try:
 						if API == "date":
 							#ont recup la Date
 	       						date = datetime.datetime.now()
-        						date2 = date.strftime('%d %m')
+        						date2 = date.strftime('%d %m %y')
 							message = date2
 
 					with canvas(device) as draw:
